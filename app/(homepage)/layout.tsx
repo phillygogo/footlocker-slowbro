@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import Nav from './ui/components/nav';
-export default function Page() {
+import Nav from '../ui/components/nav';
+
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col items-center min-h-screen bg-black">
       <div className="flex bg-white items-center justify-center h-20 w-full">
@@ -17,6 +18,7 @@ export default function Page() {
       </div>
       <Nav />
       <div className="flex justify-center w-full max-w-screen-xl bg-white min-h-screen size-full px-6">
+        {children}
       </div>
     </div>
   );
